@@ -1,0 +1,89 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Github } from "lucide-react";
+import Image from "next/image";
+
+export default function Portfolio() {
+  return (
+    <div className="p-6 space-y-8">
+      <section className="text-center">
+        <h1 className="text-4xl font-bold">Sai Vani Mehatha</h1>
+        <p className="text-lg text-gray-600">AWS Certified Data Engineer | IT Support & Data Engineering</p>
+        <p className="text-sm mt-2">📍 Nashua, NH | 📧 msvani1994@gmail.com | 📞 301-232-2278</p>
+        <a href="https://github.com/Saivani-Mehatha/End-to-End-Data-Engineering-project/tree/main" target="_blank">
+          <Button className="mt-4" variant="outline">
+            <Github className="mr-2 h-4 w-4" /> GitHub
+          </Button>
+        </a>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">About Me</h2>
+        <p>
+          I’m a detail-oriented IT professional with 6 years of experience — 2 in IT Support and 4 in Data Engineering.
+          My work spans real-time data pipelines, AWS cloud services, and IT ticketing systems. I hold an AWS Data Engineer – Associate
+          certification and recently completed hands-on freelance projects in Jira Help Desk setup and real-time streaming pipelines.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Certifications</h2>
+        <ul className="list-disc ml-6">
+          <li>AWS Certified Data Engineer – Associate</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Projects</h2>
+
+        <Card className="mb-6">
+          <CardContent className="p-4">
+            <h3 className="text-xl font-bold">Jira IT Help Desk Ticketing System</h3>
+            <p className="text-sm text-gray-600 mb-2">Simulated real-world IT support system using Jira Service Management</p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Custom request types: password reset, laptop requests, etc.</li>
+              <li>Configured SLAs, automation rules, and portal branding</li>
+              <li>Simulated ticket resolution flow from user to agent</li>
+            </ul>
+            <Image src="/screenshots/jira-project-setup.png" alt="Jira project setup" width={800} height={450} className="rounded-xl shadow" />
+            <p className="text-sm mt-2">Screenshot showing the Jira Service Management project setup with categorized request types.</p>
+            <Image src="/screenshots/jira-request-form.png" alt="Request form" width={800} height={450} className="rounded-xl shadow mt-4" />
+            <p className="text-sm mt-2">Custom form for requesting a new laptop including fields like summary, description, and attachment.</p>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="text-xl font-bold">Real-Time Streaming Data Pipeline</h3>
+            <p className="text-sm text-gray-600 mb-2">GitHub-hosted project using Kafka, Spark, Cassandra, and AWS</p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Streamed random user data via Kafka topics</li>
+              <li>Processed using Spark Structured Streaming</li>
+              <li>Stored in Cassandra & PostgreSQL; integrated with Airflow & S3</li>
+            </ul>
+            <a
+              href="https://github.com/Saivani-Mehatha/End-to-End-Data-Engineering-project/tree/main"
+              className="text-blue-600 text-sm"
+              target="_blank"
+            >
+              View GitHub Repository
+            </a>
+            <Image src="/screenshots/realtime-pipeline-arch.png" alt="Real-time pipeline architecture" width={800} height={450} className="rounded-xl shadow mt-4" />
+            <p className="text-sm mt-2">Architecture diagram showcasing the data flow from Kafka to Spark and storage in Cassandra & PostgreSQL.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
+        <ul className="list-disc ml-6 space-y-2">
+          <li><strong>Suvarna Technosoft Pvt Ltd</strong> – AWS Data Engineer (Sep 2020 – Nov 2021)</li>
+          <li><strong>Atos Syntel</strong> – Data Engineer (Jul 2018 – Aug 2020)</li>
+          <li><strong>Navata Road Transport</strong> – IT Support Analyst (Jan 2016 – Feb 2017)</li>
+        </ul>
+      </section>
+    </div>
+  );
+}
+
+
